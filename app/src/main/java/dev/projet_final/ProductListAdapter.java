@@ -28,7 +28,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
+        holder.setProduct(products[position]);
     }
 
     @Override
@@ -48,15 +48,21 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
             this.unit = itemView.findViewById(R.id.unit);
         }
 
-        public void setName(String name) {
+        public void setProduct(Product product) {
+            setName(product.name);
+            setPrice(product.price);
+            setUnit(product.unitId);
+        }
+
+        private void setName(String name) {
             this.name.setText(name);
         }
 
-        public void setPrice(double price) {
+        private void setPrice(float price) {
             this.price.setText(String.format(Locale.getDefault(), "%.2f", price));
         }
 
-        public void setUnit(int stringId) {
+        private void setUnit(int stringId) {
             this.unit.setText(stringId);
         }
     }
