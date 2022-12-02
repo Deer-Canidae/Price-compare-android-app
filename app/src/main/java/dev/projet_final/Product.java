@@ -13,7 +13,7 @@ public class Product {
      * The unique product id
      */
     @PrimaryKey(autoGenerate = true)
-    public int productId;
+    public long productId;
 
     /**
      * The name of the product

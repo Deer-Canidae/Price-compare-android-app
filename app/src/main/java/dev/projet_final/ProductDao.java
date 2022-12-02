@@ -1,5 +1,6 @@
 package dev.projet_final;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -10,10 +11,10 @@ import java.util.List;
 @Dao
 public interface ProductDao {
     @Query("SELECT * FROM product ORDER BY timestamp DESC")
-    List<Product> getAll();
+    LiveData<List<Product>> getAll();
 
     @Insert
-    void insertAll(Product... products);
+    void insert(Product... products);
 
     @Delete
     void delete(Product product);

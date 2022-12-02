@@ -8,10 +8,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
 import java.util.Locale;
 
 public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.ViewHolder> {
 
+    private final Product[] products;
+
+    public ProductListAdapter(List<Product> productList) {
+        products = productList.toArray(new Product[]{});
+    }
 
     @NonNull
     @Override
@@ -27,7 +33,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
 
     @Override
     public int getItemCount() {
-        return 0;
+        return products.length;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
