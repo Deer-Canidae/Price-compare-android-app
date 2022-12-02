@@ -6,7 +6,10 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import java.util.List;
 
@@ -31,9 +34,17 @@ public class MainActivity extends AppCompatActivity {
         rc = findViewById(R.id.rc_main);
         rc.setLayoutManager(new LinearLayoutManager(null, RecyclerView.VERTICAL, false));
 
+        //Button setup
+        Button button = findViewById(R.id.add_item_button);
+        button.setOnClickListener(this::newItem);
+
     }
 
     private void update(List<Product> productList) {
         rc.setAdapter(new ProductListAdapter(productList));
+    }
+
+    private void newItem(View view) {
+        startActivity(new Intent(this, NewProductActivity.class));
     }
 }

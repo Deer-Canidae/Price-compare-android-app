@@ -4,11 +4,13 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 /**
  * Defines the properties of a product
  */
 @Entity(tableName = "product")
-public class Product {
+public class Product implements Serializable {
     /**
      * The unique product id
      */
