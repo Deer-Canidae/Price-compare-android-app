@@ -1,5 +1,6 @@
 package dev.projet_final;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +15,11 @@ import java.util.Locale;
 public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.ViewHolder> {
 
     private final Product[] products;
+    private final Context appCtx;
 
-    public ProductListAdapter(List<Product> productList) {
+    public ProductListAdapter(List<Product> productList, Context appCtx) {
         products = productList.toArray(new Product[]{});
+        this.appCtx = appCtx;
     }
 
     @NonNull
@@ -28,7 +31,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.setProduct(products[position]);
+        holder.setProduct(products[position], appCtx);
     }
 
     @Override
@@ -48,10 +51,10 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
             this.unit = itemView.findViewById(R.id.unit);
         }
 
-        public void setProduct(Product product) {
+        public void setProduct(Product product, Context appCtx) {
             setName(product.name);
             setPrice(product.price);
-            setUnit(product.unitId);
+            setUnit(product.unitId, appCtx);
         }
 
         private void setName(String name) {
@@ -62,8 +65,8 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
             this.price.setText(String.format(Locale.getDefault(), "%.2f", price));
         }
 
-        private void setUnit(int stringId) {
-            this.unit.setText(stringId);
+        private void setUnit(int unitId, Context appCtx) {
+            this.unit.setText(Unit.getStringRes(unitId, appCtx));
         }
     }
 }

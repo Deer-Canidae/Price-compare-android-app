@@ -40,4 +40,35 @@ public class Product implements Serializable {
      */
     @ColumnInfo(name = "timestamp")
     public long timestamp;
+
+    public Product(String name, float price, int unitId, long timestamp) {
+        this.name = name;
+        this.price = price;
+        this.unitId = unitId;
+        this.timestamp = timestamp;
+    }
+
+    public void setProductId(long productId) {
+        this.productId = productId;
+    }
+
+    public long getProductId() {
+        return productId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public int getUnitId() {
+        return unitId;
+    }
+
+    public long getTimestamp() {
+        return timestamp;
+    }
 }
