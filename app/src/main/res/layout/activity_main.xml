@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical">
+
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rc_main"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:id="@+id/rc_main"/>
+        app:layoutManager="LinearLayoutManager"
+        tools:listitem="@layout/product_view" />
+
     <Button
+        android:id="@+id/add_item_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add item"
-        android:id="@+id/add_item_button"
-        />
+        android:text="Add item" />
 </LinearLayout>

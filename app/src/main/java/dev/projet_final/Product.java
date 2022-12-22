@@ -21,54 +21,30 @@ public class Product implements Serializable {
      * The name of the product
      */
     @ColumnInfo(name = "name")
-    public String name;
+    public final String name;
 
     /**
      * The price of a product
      */
     @ColumnInfo(name = "price")
-    public float price;
+    public final float price;
 
     /**
      * The id of the product's unit
      */
     @ColumnInfo(name = "unitId")
-    public int unitId;
+    public final int unitId;
 
     /**
      * The product's POSIX timestamp
      */
     @ColumnInfo(name = "timestamp")
-    public long timestamp;
+    public final long timestamp;
 
     public Product(String name, float price, int unitId, long timestamp) {
         this.name = name;
         this.price = price;
         this.unitId = unitId;
         this.timestamp = timestamp;
-    }
-
-    public void setProductId(long productId) {
-        this.productId = productId;
-    }
-
-    public long getProductId() {
-        return productId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public float getPrice() {
-        return price;
-    }
-
-    public int getUnitId() {
-        return unitId;
-    }
-
-    public long getTimestamp() {
-        return timestamp;
     }
 }

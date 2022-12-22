@@ -1,7 +1,6 @@
 package dev.projet_final;
 
 import android.content.Context;
-import android.provider.Settings;
 
 import androidx.room.Database;
 import androidx.room.Room;

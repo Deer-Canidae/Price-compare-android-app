@@ -4,4 +4,20 @@
     <string name="per_kilo">$/kilo</string>
     <string name="per_gallon">$/gal</string>
     <string name="per_liter">$/L</string>
+    <string name="delete">Deleting</string>
+    <string name="delete_prompt">Are you sure you want to delete this product ?</string>
+    <string name="delete_all">Delete All</string>
+    <string name="delete_all_prompt">Are you sure you want to delete ALL products ?</string>
+    <string name="np_prompt">Product sheet</string>
+    <string name="np_name">Product name</string>
+    <string name="np_input_unit">Input Unit</string>
+    <string name="np_output_unit">Output Unit</string>
+    <string name="np_mass_volume">Mass/Volume</string>
+    <string name="np_price">Price</string>
+    <string name="np_package_deal">Package deal</string>
+    <string name="np_blank_name_error">Name cannot be blank</string>
+    <string name="np_invalid_price">Price is not valid</string>
+    <string name="np_invalid_mv">Invalid mass/volume</string>
+    <string name="np_invalid_package">Invalid packge deal</string>
+    <string name="np_negative_or_null">Values cannot be nagative nor null</string>
 </resources>

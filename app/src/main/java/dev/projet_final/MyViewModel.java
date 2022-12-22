@@ -5,20 +5,18 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
-import androidx.room.Room;
 
 import java.util.List;
 import java.util.concurrent.Executors;
 
 public class MyViewModel extends AndroidViewModel {
 
-    private final ProductDatabase productDatabase;
     private final LiveData<List<Product>> productLiveData;
     private final ProductDao dao;
 
     public MyViewModel(@NonNull Application application) {
         super(application);
-        productDatabase = ProductDatabase.getDbInstance(application.getApplicationContext());
+        ProductDatabase productDatabase = ProductDatabase.getDbInstance(application.getApplicationContext());
         dao = productDatabase.productDao();
         productLiveData = dao.getAll();
     }
@@ -28,6 +26,14 @@ public class MyViewModel extends AndroidViewModel {
     }
 
     public void addProduct(Product product) {
-        Executors.newSingleThreadExecutor().execute(() -> {dao.insert(product);});
+        Executors.newSingleThreadExecutor().execute(() -> dao.insert(product));
+    }
+
+    public void deleteProduct(Product product) {
+        Executors.newSingleThreadExecutor().execute(() -> dao.delete(product));
+    }
+
+    public void deleteAll() {
+        Executors.newSingleThreadExecutor().execute(dao::deleteAll);
     }
 }
