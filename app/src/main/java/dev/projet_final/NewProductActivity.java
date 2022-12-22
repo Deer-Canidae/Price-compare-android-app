@@ -2,6 +2,7 @@ package dev.projet_final;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -48,6 +49,8 @@ public class NewProductActivity extends AppCompatActivity implements AdapterView
 
         //EditText(s)
         this.nameEdit = findViewById(R.id.np_name);
+        this.nameEdit.setInputType(InputType.TYPE_TEXT_FLAG_CAP_WORDS);
+
         this.mvEdit = findViewById(R.id.np_mass_volume);
         this.packageEdit = findViewById(R.id.np_package_deal);
         this.priceEdit = findViewById(R.id.np_price);

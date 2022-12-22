@@ -20,4 +20,9 @@
     <string name="np_invalid_mv">Invalid mass/volume</string>
     <string name="np_invalid_package">Invalid packge deal</string>
     <string name="np_negative_or_null">Values cannot be nagative nor null</string>
+    <string name="add_item_button">Add Item</string>
+    <string name="per_floz">$/fl.oz</string>
+    <string name="per_oz">$/oz</string>
+    <string name="per_g">$/g</string>
+    <string name="per_ml">$/mL</string>
 </resources>

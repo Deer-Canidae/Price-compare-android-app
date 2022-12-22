@@ -5,4 +5,25 @@
     <string name="per_kilo">$/kilo</string>
     <string name="per_gallon">$/gal</string>
     <string name="per_liter">$/L</string>
+    <string name="delete">Suppression</string>
+    <string name="delete_prompt">Voulez-vous vraiment supprimer ce produit?</string>
+    <string name="delete_all">Supprimer Tout</string>
+    <string name="delete_all_prompt">Voullez-vous vraiment supprimer TOUS les produits?</string>
+    <string name="np_prompt">Fiche de produit</string>
+    <string name="np_name">Nom du produit</string>
+    <string name="np_input_unit">Unité entrée</string>
+    <string name="np_output_unit">Unité standard</string>
+    <string name="np_mass_volume">Masse/Volume</string>
+    <string name="np_price">Prix</string>
+    <string name="np_package_deal">Lot multiple</string>
+    <string name="np_blank_name_error">Le nom ne peut être vide</string>
+    <string name="np_invalid_price">Le prix n\'est pas valide</string>
+    <string name="np_invalid_mv">Masse/Volume invalide</string>
+    <string name="np_invalid_package">Lot multiple invalide</string>
+    <string name="np_negative_or_null">Les valeurs ne peuvent être negatives ou nulles</string>
+    <string name="add_item_button">Ajouter un produit</string>
+    <string name="per_floz">$/fl.oz</string>
+    <string name="per_oz">$/oz</string>
+    <string name="per_g">$/g</string>
+    <string name="per_ml">$/mL</string>
 </resources>
