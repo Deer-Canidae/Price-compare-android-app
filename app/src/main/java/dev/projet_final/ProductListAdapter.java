@@ -65,12 +65,10 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
 
         private void setName(String name) {
             this.name.setText(name);
-            // Tried a fix but it somehow made it worse
-            //this.name.setLayoutParams(new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f));
         }
 
         private void setPrice(float price) {
-            this.price.setText(String.format(Locale.getDefault(), "%.2f", price));
+            this.price.setText(String.format(Locale.getDefault(), "%.5g", price));
         }
 
         private void setUnit(int unitId, Context appCtx) {

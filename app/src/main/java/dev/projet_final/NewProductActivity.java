@@ -76,9 +76,9 @@ public class NewProductActivity extends AppCompatActivity implements AdapterView
             Snackbar.make(this.nameEdit, R.string.np_blank_name_error, Snackbar.LENGTH_SHORT).show();
             return;
         }
-        float price;
+        double price;
         try {
-            price = Float.parseFloat(this.priceEdit.getText().toString());
+            price = Double.parseDouble(this.priceEdit.getText().toString());
             if (price <= 0d)
                 throw new NegativeOrNullException();
         } catch (NumberFormatException e) {
@@ -88,9 +88,9 @@ public class NewProductActivity extends AppCompatActivity implements AdapterView
             Snackbar.make(this.priceEdit, R.string.np_negative_or_null, Snackbar.LENGTH_SHORT).show();
             return;
         }
-        float mv;
+        double mv;
         try {
-            mv = Float.parseFloat(this.mvEdit.getText().toString());
+            mv = Double.parseDouble(this.mvEdit.getText().toString());
             if (mv <= 0d)
                 throw new NegativeOrNullException();
         } catch (NumberFormatException e) {
@@ -100,13 +100,13 @@ public class NewProductActivity extends AppCompatActivity implements AdapterView
             Snackbar.make(this.mvEdit, R.string.np_negative_or_null, Snackbar.LENGTH_SHORT).show();
             return;
         }
-        float packageDeal;
+        double packageDeal;
         String packageString = this.packageEdit.getText().toString();
         if (packageString.isBlank())
             packageDeal = 1f;
         else {
             try {
-                packageDeal = Float.parseFloat(packageString);
+                packageDeal = Double.parseDouble(packageString);
                 if (packageDeal <= 0)
                     throw new NegativeOrNullException();
             } catch (NumberFormatException e) {
@@ -117,8 +117,8 @@ public class NewProductActivity extends AppCompatActivity implements AdapterView
                 return;
             }
         }
-        final float conversionFactor = this.inputUnit.getConversionFactor();
-        final float finalPrice = price / mv * packageDeal * conversionFactor;
+        final double conversionFactor = (double)this.inputUnit.getConversionFactor();
+        final float finalPrice = (float)((price) / (mv * packageDeal * conversionFactor));
         Product prod = new Product(name, finalPrice, this.outputUnit.getUnitId(), new Date().getTime() / 1000L);
         Intent intent = new Intent();
         intent.putExtra("product", prod);
